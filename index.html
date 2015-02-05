@@ -22,12 +22,13 @@ var time_to_election = function() {
   var election_date = new Date("May 7, 2015");
   var time_to_go    = moment.range(today, election_date);
 
-  var days    = time_to_go.diff('days');
+  var weeks   = time_to_go.diff('weeks');
+  var days    = time_to_go.diff('days') - (weeks * 7);
   var hours   = time_to_go.diff('hours');
   var minutes = time_to_go.diff('minutes');
   var seconds = time_to_go.diff('seconds');
 
-  document.getElementById('time_to_go').innerHTML = days + " days";
+  document.getElementById('time_to_go').innerHTML = weeks + " weeks " + days + " days";
   document.getElementById('until').innerHTML = "until the election";
 }
 
