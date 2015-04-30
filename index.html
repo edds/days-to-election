@@ -35,8 +35,14 @@ var time_to_election = function() {
     dayString = days + " day";
   }
 
+  var weekString = "";
+  if(weeks > 1){
+    weekString = weeks + " weeks";
+  } else if(weeks === 1){
+    weekString = weeks + " week";
+  }
 
-  document.getElementById('time_to_go').innerHTML = weeks + " weeks " + dayString;
+  document.getElementById('time_to_go').innerHTML = weekString + " " + dayString;
   document.getElementById('until').innerHTML = "until the election";
 }
 
